@@ -198,8 +198,23 @@ nav img {
 #sidebar ul{
   list-style: none;
   padding: 0 3%;
+  position: relative;
 }
 
+#sidebar ul li:first-child{
+  position: relative;
+}
+
+#sidebar > ul > li:nth-child(1) > a:nth-child(2){
+  
+  position: absolute;
+  top: 6px;
+  right: -20px;
+  padding: 2% 2% 1.5% 1.5%;
+  background: white;
+  border-radius: 50%;
+  border: 1px solid var(--borderGray);
+}
 
 #sidebar a{
   color:var(--darkGray);
@@ -256,6 +271,17 @@ nav img {
   row-gap: 10px;
   margin-right: 1%;
   margin-bottom: 5%;
+  position: relative;
+}
+
+#details > a{
+  position: absolute;
+  right: 0;
+  background: white;
+  padding: 3px;
+  border-radius: var(--borderRadius);
+  border:1px solid var(--borderGray);
+  color:var(--darkGray);
 }
 
 #details > div {
