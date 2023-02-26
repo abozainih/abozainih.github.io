@@ -60,13 +60,14 @@ nav ul {
 }
 #ll{
   border:1px solid var(--borderGray);
-  padding: 15px 26px;
   border-radius: var(--borderRadius);
   cursor: pointer;
   position: relative;
 }
 #lang{
     text-align: center;
+    padding: 14px 26px;
+    white-space: nowrap;
 }
 
 #lang > p{
@@ -106,6 +107,7 @@ nav ul {
 #bell{
   padding: 0.5%;
   /* border: 1px solid; */
+  position: relative;
   border-radius: 100%;
   background: #F4F4F4;
 }
@@ -116,7 +118,7 @@ nav ul {
 
 #bell a{
   text-decoration: none;
-  position: relative;
+  position: absolute;
 }
 
 #bell i::after{
@@ -158,6 +160,23 @@ nav img {
   margin-right: 1em;
   text-align: end;
 }
+
+#navList {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  font-size: small;
+  position: relative;
+  column-gap: 2%;
+}
+
+#navList a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color:black
+}
+
 
 #navList > ul > li:nth-child(4) a{
   text-decoration: none;
@@ -425,6 +444,7 @@ nav img {
 
 #structure #levels{
   display: flex;
+  flex-wrap: wrap;
 }
 
 #structure #levels > div{
@@ -434,6 +454,7 @@ nav img {
   align-items: center;
   border: 1px solid var(--borderGray);
   position: relative;
+  
   background: #F6F7FB;
 }
 
@@ -701,6 +722,8 @@ nav img {
 
 #extra{
   line-height: var(--lineHeight);
+  width: 70%;
+  box-shadow: none !important;
 }
 #extra  p{
   font-weight: bold;
@@ -709,9 +732,10 @@ nav img {
 
 #extra > div {
   display: flex;
-  column-gap: 2%;
-  row-gap: 10px;
+  column-gap: 1%;
+  row-gap: 7px;
   flex-wrap: wrap;
+
 }
 #extra > p{
   margin:2% 0;
@@ -729,3 +753,161 @@ nav img {
   color:#2F96F9;
   text-decoration: none;
 }
+
+
+@media (min-width:1358px){
+  #sidebar{
+    display: block !important;
+  }
+  nav ul {
+    display: flex !important;
+  }
+  nav>i{
+    display: none;
+  }
+}
+
+@media (max-width:1358px) {
+  .container{
+    grid-template-areas:"nav nav nav"
+                        "details details details";
+  }
+#sidebar{
+    position: absolute;
+    display: none;
+    top: 85px;
+    z-index: 3;
+    height: fit-content;
+    padding-top: 0;
+    width:50%;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+#sidebar a{
+  text-align: start;
+}
+
+#sidebar > ul > li:nth-child(1) > a:nth-child(2){
+  display: none;
+}
+ aside:not(:first-child) {
+    display: none;
+  }
+
+  nav ul {
+    position: absolute;
+    flex-direction: column;
+    top: 133%;
+    right: -15px;
+    z-index: 3;
+    background: white;
+    padding: 0%;
+    display: none;
+  }
+
+  nav ul >li {
+    margin: 4%;
+    padding: 10px 29px;
+    padding-left: 32px;
+  }
+
+  nav > i {
+    display: inline-block;
+    align-self: center;
+    font-size: 25px;
+    padding-right: 2%;
+
+    cursor: pointer;
+  }
+  #structure #levels > div {
+    padding: 1% 6%;
+  }
+
+  #details {
+    margin-left:1%;
+  }
+
+}
+
+@media (max-width:800px){
+
+  #sidebar {
+    width: 100vw;
+    top: 85px;
+    height: 100vh;
+  }
+
+  /* #sidebar a{
+    text-align: start;
+  } */
+
+  nav ul {
+    display: flex;
+    width: 100vw;
+    box-shadow: var(--box-shadow);
+    border-bottom: 2px solid var(--borderGray);
+    border-radius: var(--borderRadius);
+    top: 70px;
+    padding-top: 50%;
+  }
+  #jobDetails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #jobInfo{
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 15px;
+  }
+  #jobInfo > div {
+    width: 100%;
+  }
+  #jobDetails > span:nth-child(4){
+    white-space: nowrap;
+  }
+  #dates{
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  #dates > div{
+    width:100%;
+  }
+
+  #employees{
+    flex-direction: column;
+    row-gap: 15px;
+  }
+  #employees > div{
+    width:100%;
+  }
+
+  #job #benefits div {
+    width: calc(98% / 2);
+
+  }
+
+  #information{
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  #information > div{
+    width:100% !important;
+  }
+ 
+  #extra{
+    width:100%;
+  }
+  #extra > div{
+    flex-direction: column;
+  }
+
+  #extra > div > div {
+    flex:none;
+  }
+}
+
+
